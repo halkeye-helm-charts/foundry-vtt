@@ -1,7 +1,0 @@
-ingress:
-  enabled: true
-  hosts:
-    - host: test.example.com
-      paths:
-        - path: /
-          pathType: Prefix
