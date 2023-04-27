@@ -3,7 +3,7 @@ name: foundry-vtt
 description: Foundry Virtual Tabletop
 type: application
 version: 0.1.2
-appVersion: "v10.288"
+appVersion: "10.288"
 keywords:
   - game
   - server
@@ -12,13 +12,15 @@ keywords:
   - foundryvtt
   - foundry
 sources:
-  - https://github.com/mahahe-it/helm/tree/main/charts/foundry-vtt
+  - https://github.com/halkeye-helm-charts/foundry-vtt/tree/main
 maintainers:
+  - name: Gavin Mogan
+    email: helm@gavinmogan.com
   - name: MaHaHe DevOps
     email: devops@mahahe.it
     url: https://www.mahahe.it/
 icon: https://foundryvtt.com/static/assets/icons/fvtt.png
 annotations:
-  "artifacthub.io/links": |
-    - name: Chart Source
-      url: https://github.com/mahahe-it/helm
+  artifacthub.io/images: |
+    - name: synapse
+      image: "felddy/foundryvtt:v1.79.0"

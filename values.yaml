@@ -68,7 +68,7 @@ affinity: {}
 image:
   pullPolicy: IfNotPresent
   repository: felddy/foundryvtt
-  tag: 10.288
+  tag: "{{ .Chart.AppVersion }}"
 
 ## @param imagePullSecrets Credentials for Docker private repository.
 imagePullSecrets: []
@@ -167,7 +167,7 @@ foundryvtt:
   upnp: false
 
   ## Version of Foundry VTT to install.
-  version: 10.288
+  version: "{{ .Chart.AppVersion }}"
 
   ## The world startup at system start.
   world: ""

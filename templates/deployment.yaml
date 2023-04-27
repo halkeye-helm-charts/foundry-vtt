@@ -32,7 +32,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ tpl .Values.image.tag . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -176,7 +176,7 @@ spec:
               value: {{ .Values.foundryvtt.upnp }}
           {{- end }}
             - name: FOUNDRY_VERSION
-              value: {{ .Values.foundryvtt.version | quote }}
+              value: {{ tpl .Values.foundryvtt.version . | quote }}
           {{- if .Values.foundryvtt.world }}
             - name: FOUNDRY_WORLD
               value: {{ .Values.foundryvtt.world | quote }}
@@ -213,6 +213,7 @@ spec:
             secretName: {{ include "foundry-vtt.fullname" . }}-aws
           {{- else }}
             secretName: {{ .Values.foundryvtt.s3.existingSecret }}
+          {{- end }}
     {{- end }}
         - name: data
     {{- if .Values.persistence.enabled }}
@@ -225,4 +226,3 @@ spec:
     {{- else }}
           emptyDir: { }
     {{- end }}
-  {{- end }}
