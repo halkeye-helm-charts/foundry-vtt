@@ -2,7 +2,7 @@ apiVersion: v2
 name: foundry-vtt
 description: Foundry Virtual Tabletop
 type: application
-version: 1.0.1
+version: "1.0.1"
 appVersion: "v10.288"
 keywords:
   - game
@@ -22,7 +22,7 @@ maintainers:
 icon: https://foundryvtt.com/static/assets/icons/fvtt.png
 annotations:
   artifacthub.io/images: |
-    - name: synapse
+    - name: foundryvtt
       image: "felddy/foundryvtt:v10.288"
   artifacthub.io/changes: |2
      - "pull app version from chart.yaml, unless overridden ([ce6f089](https://github.com/halkeye-helm-charts/foundry-vtt/commit/ce6f089e8c31720db17294fdab50b1c01fb83108))"
