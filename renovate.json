@@ -5,6 +5,7 @@
     ":semanticCommitTypeAll(feat)"
   ],
   "bumpVersion": "patch",
+  "renovateFork": "true",
   "regexManagers": [
     {
       "fileMatch": [
