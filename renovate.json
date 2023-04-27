@@ -1,11 +1,13 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
     ":semanticCommits",
     ":semanticCommitTypeAll(feat)"
   ],
   "bumpVersion": "patch",
-  "renovateFork": "true",
+  "renovateFork": true,
+  "includeForks": true,
   "forkProcessing": "enabled",
   "regexManagers": [
     {
