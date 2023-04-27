@@ -2,8 +2,8 @@ apiVersion: v2
 name: foundry-vtt
 description: Foundry Virtual Tabletop
 type: application
-version: 0.1.2
-appVersion: "10.288"
+version: 1.0.0
+appVersion: '10.288'
 keywords:
   - game
   - server
@@ -24,3 +24,5 @@ annotations:
   artifacthub.io/images: |
     - name: synapse
       image: "felddy/foundryvtt:v1.79.0"
+  artifacthub.io/changes: |2
+     - "Add in my fixes to chart. Setup renovate ([e730754](https://github.com/halkeye-helm-charts/foundry-vtt/commit/e7307540e12fb68890148d8f054443f4501cfadc))"
