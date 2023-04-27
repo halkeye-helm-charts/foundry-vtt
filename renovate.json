@@ -6,6 +6,7 @@
   ],
   "bumpVersion": "patch",
   "renovateFork": "true",
+  "forkProcessing": "enabled",
   "regexManagers": [
     {
       "fileMatch": [
