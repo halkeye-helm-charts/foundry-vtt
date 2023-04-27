@@ -35,7 +35,7 @@ spec:
 {{- if .Values.image.tag }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 {{- else }}
-          image: "{{ .Values.image.repository }}:v{{ tpl (toString .Values.foundryvtt.version) . }}"
+          image: "{{ .Values.image.repository }}:{{ tpl (toString .Values.foundryvtt.version) . }}"
 {{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -180,7 +180,7 @@ spec:
               value: {{ .Values.foundryvtt.upnp }}
           {{- end }}
             - name: FOUNDRY_VERSION
-              value: {{ tpl (toString .Values.foundryvtt.version) . | quote }}
+              value: {{ tpl .Values.foundryvtt.version . | replace "v" "" | quote }}
           {{- if .Values.foundryvtt.world }}
             - name: FOUNDRY_WORLD
               value: {{ .Values.foundryvtt.world | quote }}

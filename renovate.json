@@ -27,7 +27,7 @@
       "matchStrings": [
         "appVersion:\\s+\"(?<currentValue>v[a-z0-9.-]+)\""
       ],
-      "depNameTemplate": "matrixdotorg/synapse",
+      "depNameTemplate": "felddy/foundryvtt",
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
