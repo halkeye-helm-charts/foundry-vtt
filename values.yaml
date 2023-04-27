@@ -68,7 +68,7 @@ affinity: {}
 image:
   pullPolicy: IfNotPresent
   repository: felddy/foundryvtt
-  tag: "{{ .Chart.AppVersion }}"
+  tag: ""
 
 ## @param imagePullSecrets Credentials for Docker private repository.
 imagePullSecrets: []

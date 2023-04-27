@@ -32,7 +32,11 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ tpl .Values.image.tag . }}"
+{{- if .Values.image.tag }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+{{- else }}
+          image: "{{ .Values.image.repository }}:v{{ tpl (toString .Values.foundryvtt.version) . }}"
+{{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -176,7 +180,7 @@ spec:
               value: {{ .Values.foundryvtt.upnp }}
           {{- end }}
             - name: FOUNDRY_VERSION
-              value: {{ tpl .Values.foundryvtt.version . | quote }}
+              value: {{ tpl (toString .Values.foundryvtt.version) . | quote }}
           {{- if .Values.foundryvtt.world }}
             - name: FOUNDRY_WORLD
               value: {{ .Values.foundryvtt.world | quote }}
