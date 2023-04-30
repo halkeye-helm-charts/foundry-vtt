@@ -25,7 +25,7 @@
         "^Chart.yaml$"
       ],
       "matchStrings": [
-        "appVersion:\\s+\"(?<currentValue>v[a-z0-9.-]+)\""
+        "appVersion:\\s+\"(?<currentValue>[a-z0-9.-]+)\""
       ],
       "depNameTemplate": "felddy/foundryvtt",
       "datasourceTemplate": "docker",
